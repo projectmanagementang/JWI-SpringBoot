@@ -1,4 +1,4 @@
 package com.jspl.JindalWorld.dto;
 
-public record LoginResponse(String accessToken , String tokenType , UsertAccountResponse user) {
+public record LoginResponse(String accessToken , String tokenType ) {
 }

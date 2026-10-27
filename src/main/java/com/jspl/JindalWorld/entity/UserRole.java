@@ -1,47 +1,24 @@
 package com.jspl.JindalWorld.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "user_role")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class UserRole {
 
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
-//    @Column(name = "user_id", nullable = false)
-    private Integer userId;
+    private Long userId;
 
-//    @Column(name = "role_id", nullable = false)
-    private Integer roleId;
+    private Long roleId;
 
-    public UserRole() {}
-
-    // Generate getters and setters in your IDE.
-
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
-
-    public Integer getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(Integer roleId) {
-        this.roleId = roleId;
-    }
 }

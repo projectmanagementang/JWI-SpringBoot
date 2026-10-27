@@ -11,38 +11,38 @@ import javax.crypto.SecretKey;
 import java.util.Base64;
 import java.util.Date;
 
+
+import org.springframework.security.core.Authentication;
+
 @Service
 public class JwtService {
 
     @Value("${jwt.secret}")
     private String jwtSecret;
 
-
     private SecretKey getSigningKey() {
         byte[] keyBytes = Base64.getDecoder().decode(jwtSecret);
         return Keys.hmacShaKeyFor(keyBytes);
     }
 
-    public Claims validateToken(String token){
+    public String generateToken(Authentication authentication) {
+
+        long currentTimeMillis = System.currentTimeMillis();
+
+        return Jwts.builder()
+                .subject(authentication.getName())
+                .issuedAt(new Date(currentTimeMillis))
+                .expiration(new Date(currentTimeMillis + 900_000))
+                .signWith(getSigningKey())
+                .compact();
+    }
+
+    public Claims validateToken(String token) {
         return Jwts.parser()
                 .verifyWith(getSigningKey())
                 .build()
                 .parseSignedClaims(token)
                 .getPayload();
     }
-
-    public String generateAccessToken(String username){
-
-        long CurrentTimeMillies = System.currentTimeMillis();
-
-
-        return Jwts.builder()
-                        .subject(username)
-                        .issuedAt(new Date(CurrentTimeMillies))
-                        .expiration(new Date(CurrentTimeMillies + 900000))
-                        .signWith(getSigningKey())
-                        .compact();
-    }
-
-
 }
+

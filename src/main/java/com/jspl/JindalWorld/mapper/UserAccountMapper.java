@@ -8,5 +8,5 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public interface UserAccountMapper {
 
-    public UsertAccountResponse toResponse(UserAccount userAccount);
+    UsertAccountResponse toResponse(UserAccount userAccount);
 }

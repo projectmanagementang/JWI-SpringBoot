@@ -10,7 +10,7 @@ public interface NewsItemMapper {
 //     class_of_dto toDTO(entity);
 
 
-    public NewsItemResponse toResponse(NewsItem newsItem);
+    NewsItemResponse toResponse(NewsItem newsItem);
 
 
 }

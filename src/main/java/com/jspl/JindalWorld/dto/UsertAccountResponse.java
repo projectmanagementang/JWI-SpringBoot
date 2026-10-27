@@ -17,7 +17,7 @@ public class UsertAccountResponse {
 
     private String password;
 
-    private String status = "active";
+    private final String status = "active";
 
     private String avatar;
 

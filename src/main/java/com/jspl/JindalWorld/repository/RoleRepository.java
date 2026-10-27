@@ -2,9 +2,9 @@ package com.jspl.JindalWorld.repository;
 
 import com.jspl.JindalWorld.entity.Role;
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
 
-public interface RoleRepository extends MongoRepository<Role,Integer> {
-
-
+@Repository
+public interface RoleRepository extends MongoRepository<Role,Long> {
 
 }

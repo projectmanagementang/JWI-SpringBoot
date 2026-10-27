@@ -9,45 +9,29 @@ import java.time.OffsetDateTime;
 public class Announcement {
 
     @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-//    @Column(nullable = false)
     private String title;
 
-//    @Column(nullable = false, columnDefinition = "text")
     private String message;
 
-//    @Column(nullable = false)
-    private String audience = "All Entities";
+    private final String audience = "All Entities";
 
-//    @Column(nullable = false)
-    private String priority = "normal";
+    private final String priority = "normal";
 
-//    @Column(name = "publish_date", nullable = false)
     private String publishDate;
 
-//    @Column(nullable = false)
-    private String status = "draft";
+    private final String status = "draft";
 
-//    @Column(name = "redirect_url", columnDefinition = "text")
     private String redirectUrl;
 
-//    @Column(name = "createdBy")
     private Integer createdBy;
 
-//    @Column(name = "created_at", nullable = false)
     private OffsetDateTime createdAt;
 
-//    @Column(name = "updated_at", nullable = false)
     private OffsetDateTime updatedAt;
 
-//    @Column(name = "deleted_at")
     private OffsetDateTime deletedAt;
-
-    public Announcement() {}
-
-    // Generate getters and setters in your IDE.
 
 
 }
