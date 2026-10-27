@@ -1,0 +1,28 @@
+#spring:
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/jindal_world_intranet_db
+#    username: postgres
+#    password: password
+#    driver-class-name: org.postgresql.Driver
+#    hikari:
+#      connection-init-sql: "SET TIME ZONE 'Asia/Kolkata'"
+#
+#  jpa:
+#    hibernate:
+#      ddl-auto: validate
+#    show-sql: false
+#    properties:
+#      hibernate:
+#        format_sql: true
+
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/jindal_world_intranet_db
+server:
+  port: 8080
+
+jwt:
+  secret: eKHvDfc6dhSHHI/MI0QTM5sd26PFCCz6jv3eFaR+MZ4=
+  access-token-expiration: 900000
