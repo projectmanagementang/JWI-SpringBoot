@@ -17,9 +17,9 @@
 
 
 spring:
-  data:
     mongodb:
-      uri: mongodb://localhost:27017/jindal_world_intranet_db
+      uri: mongodb://root:1234@localhost:27017/jindal_world_intranet_db?authSource=admin
+
 server:
   port: 8080
 

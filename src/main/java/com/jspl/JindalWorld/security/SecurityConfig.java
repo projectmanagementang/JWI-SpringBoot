@@ -26,6 +26,10 @@ public class SecurityConfig {
 
     private final UserDetailsService userDetailsService;
 
+    public SecurityConfig(UserDetailsService userDetailsService) {
+        this.userDetailsService = userDetailsService;
+    }
+
 
     @Bean
     public SecurityFilterChain securityFilterChain(
